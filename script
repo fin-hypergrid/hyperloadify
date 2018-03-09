@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ "" = "$1" ]; then
+	echo "usage: loadabilify module-name <input.js >build/output.js"
+else
+	echo "fin.Hypergrid.modules['$1']=(function(require,module,exports){"
+	cat # stream stdin
+	echo ";return module.exports})(fin.Hypergrid.require,fin.$={},fin.$.exports={});"
+	echo "delete fin.$;"
+fi
