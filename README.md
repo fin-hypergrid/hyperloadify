@@ -45,14 +45,15 @@ Notes:
 * The module is a "closed over" [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
 * The module's output (`module.exports`) is stored into `fin.Hypergrid.modules` for access by other modules
 * `require()` is available for use inside the module, thus providing access to other loaded modules (actually calls `fin.Hypergrid.require(name)` which returns `fin.Hypergrid.modules[name]`)
-* When key is not specified, the output is the same except that the output is not stored (the `fin.Hypergrid.modules['modname']=` part is omitted).
+* When key is not specified, the output is the same except that the output is not stored (the [L-value](https://en.wikipedia.org/wiki/L-value] in the above is omitted).
 
-### `Hypergrid.require`
-In addition, the following predefined modules are made available by `Hypergrid.require`:
+### Predefined modules
+In addition to your previously loaded wrapped modules, the following predefined modules are available to `Hypergrid.require`:
 
 Module | Description
 --- | ---
 `var Hypergrid = require('fin-hypergrid')`|The Hypergrid constructor.
+`var Hypergrid = require('fin-hypergrid/src/...')`|...
 `var Hypergrid = require('datasaur-base')`|Useful for building your own data model.
 `var Hypergrid = require('datasaur-local')`|Useful for extending the default data model.
 
