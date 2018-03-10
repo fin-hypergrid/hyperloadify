@@ -1,4 +1,4 @@
-Loading modules on the client is not recommended because it requires multiple loads, which are generally synchronous, as well as polluting the global name space with references to the loaded modules. It is nonetheless a popular paradigm for the quick & dirty proof-of-concept phase of a project. It is in this spirit that we offer the Hypergrid build files on our CDN.
+Loading modules on the client is not recommended because it requires multiple loads, which are generally synchronous, as well as polluting the global name space with references to the loaded modules. It is nonetheless a popular paradigm for the quick & dirty proof-of-concept phase of a project. It is in this spirit that we offer a Hypergrid build file on our CDN, which includes `Hypergrid.require`.
 
 As the project matures, however, more serious development will demand bundling the files ahead of time (with Browserify, webpack, _etc._) into a single loadable module.
 
